@@ -15,9 +15,9 @@ header {
   width: 100%;
   /* box-sizing: border-box; */
   position: absolute;
-  bottom: 0px;
+  /* bottom: 0px; */
   left: 0px;
-  /* z-index: 10; */
+  z-index: 10;
 }
 header ul {
   width: 100%; /*ab을 주면 딱 텍스트 내용 만큼만 너비를 가져가기 때문에 width값을 지정해줘야 함*/
@@ -45,7 +45,8 @@ header.on {
   position: fixed;
   top: 0px;
   left: 0px;
-  box-shadow: 2px 2px 3px #222; /*??? 왜 적용이 안되지?? 뭔가 이상하게 되는 것 같은데?? */
+  /* box-shadow: 2px 2px 3px #222;  */
+  /*??? 왜 적용이 안되지?? 뭔가 이상하게 되는 것 같은데?? */
 } /*클래스 이름을 중복으로 줘도 상관없나? 같은 클래스 이름에 내용물은 다른거잖아*/
 
 /*컨테이너*/
@@ -57,12 +58,23 @@ header.on {
   background-size: cover;
   background-attachment: fixed; /*다음 이미지가 그 위로 올라옴???*/
 }
+#container section > h3 {
+  height: 150px;
+  font-size: 45px;
+  /* margin-bottom: 50px; */
+  color: white;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  align-content: center;
+  letter-spacing: 5px;
+}
 
 /*컨테이너_1st*/
 section#con1 {
   background-image: url(../img/Homepage_NewVisitor_Desktop_NoFrame.jpg.miniusaimg.cover.avif);
   position: relative;
 } /* 선택자 이름 넣을 때 주의할 것!! section과 #con1 사이에 띄어쓰기가 들어가면 안됨 */
+/*컨테이너_1st_선 움직임*/
 #con1 .down {
   width: 10px;
   height: 0%;
@@ -79,6 +91,7 @@ section#con1 {
   bottom: 90px;
   left: 0px;
 }
+/*컨테이너_1st_제목*/
 #con1 .topic {
   position: absolute;
   bottom: 130px;
@@ -87,30 +100,48 @@ section#con1 {
   font-size: 50px;
   font-family: "Newsreader", serif;
 }
+#con1 .topic h2 {
+  position: relative;
+  top: 50px;
+  opacity: 0;
+}
+#con1 .topic h2.up {
+  top: 0px;
+  opacity: 1;
+}
 #con1 .topic h2:nth-child(1) {
   font-size: 45px;
   font-style: italic;
   font-family: "DaimlerCAC-Regular";
   margin-bottom: 20px;
+  transition: 1s;
+}
+#con1 .topic h2:nth-child(2) {
+  transition: 1s;
+  transition-delay: 0.3s;
 }
 
 /*컨테이너_2st*/
 section#con2 {
   background-image: url(../img/pic22.jpg);
   font-family: "Newsreader", serif;
+  align-content: center;
+}
+#con2 h3 {
+  opacity: 0;
+  transform: translateY(50px);
 }
 #con2 ul {
   width: 80%;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   align-items: center; /*왜 ul이 가운데로 가지...? 이게 왜 되지....???*/
-  gap: 10px;
+  gap: 30px;
   margin: 0px auto;
 }
 #con2 li {
   width: calc(100% / 4);
   height: 400px;
-  /* background-color: rgba(255, 228, 181, 0.8); */
   transform: translateY(100px);
   opacity: 0;
   transition: 1.5s; /*addClass를 사용하면 애니메이트 효과 줄 수 없으니까 미리 트랜지션 넣어놓기*/
@@ -127,6 +158,7 @@ section#con2 {
   height: 100%;
   object-fit: cover;
 }
+/*컨테이너_2st_텍스트*/
 #con2 h4 {
   font-size: 35px;
   font-weight: 500;
@@ -154,105 +186,69 @@ section#con2 {
 /*컨테이너_3st*/
 section#con3 {
   background-image: url(../img/pic33.jpg);
+  font-family: "Newsreader", serif;
+  align-content: center;
 }
 #con3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* perspective: 700px; */
+  perspective: 800px;
   /*원근감을 줌 -> 부모한테 써줘야 자식한테 원근감이 적용됨
   값이 크면 원근감이 작음, 값이 작으면 원근감이 크게 느껴짐*/
 }
-#con3 .txt {
-  width: 50%;
-  height: 50%;
-  background-color: darkolivegreen;
-  transform: rotateY(0deg);
+#con3 h3 {
   opacity: 0;
-  transition: 1s;
-  position: absolute;
-  display: none;
+  transform: translateY(-200px);
 }
-/* #con3.on .txt {
-  transform: rotateY(180deg);
-  opacity: 1;
-} */
-
 /**/
 #con3 ul {
   width: 1200px;
-  height: 400px;
+  height: 450px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 50px;
   /* position: relative; */
   perspective: 650px;
   margin: 0px auto;
+  transform: rotateY(0deg);
+  opacity: 0;
+  transition: 2s;
+}
+#con3 ul.on {
+  transform: rotateY(360deg);
+  opacity: 1;
 }
 #con3 li {
   width: calc(100% / 3);
   height: 100%;
-  /* background-color: red; */
-  /* position: absolute; */
   transform: rotateY(0deg);
-  /* opacity: 0; */
 }
 #con3 li a {
-  /* height: 50%; */
+  width: 100%;
+  height: 100%;
   color: white;
   display: flex;
-  gap: 20px;
 }
 #con3 li img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+/*컨테이너_3st_텍스트*/
 #con3 li div {
   width: 0%;
   overflow: hidden;
-  /* display: none; */
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  /* padding: 20px; */
 }
-#con3 li img:hover div {
-  display: block;
-}
-
 #con3 li h4 {
-  font-size: 35px;
+  font-size: 40px;
 }
 #con3 li p {
-  font-size: 15px;
-  margin-top: 10px;
+  font-size: 20px;
+  margin-top: 20px;
+  line-height: 30px;
 }
-/*컨3 위치조정*/
-#con3 li:nth-child(1) {
-  /* left: -200px;
-  top: -100px; */
-}
-#con3 li:nth-child(2) {
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
-}
-#con3 li:nth-child(3) {
-  /* right: -200px;
-  bottom: -100px; */
-}
-
-/*컨3 제이쿼리*/
-/* #con3 li.plus {
-  transform: rotateY(360deg);
-  opacity: 1;
-  transition: 1.5s;
-} */
-/* #con3 li.plus:nth-child(2) {
-  transform: translate(-50%, -50%) rotateY(360deg);
-  opacity: 1;
-} */
-/* #con3 li.wid {
-  width: 300px;
-  filter: brightness(90%);
-  transition: 0.5s;
-} */
 
 /**/
 
@@ -260,6 +256,7 @@ section#con3 {
 section#con4 {
   background-image: url(../img/pic44.jpg);
   align-content: center;
+  font-family: "Newsreader", serif;
 }
 #con4 > div {
   width: 1200px;
@@ -270,41 +267,97 @@ section#con4 {
   text-align: center;
 }
 #con4 h3 {
-  font-size: 40px;
   margin-bottom: 50px;
   color: white;
-  text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
+  font-size: 45px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+  letter-spacing: 5px;
 }
 /* #con4 .play {
   text-align: center;
 } -> 왜 안되지....*/
+#con4 > div > div {
+  width: 700px;
+  height: 400px;
+  margin: 0px auto;
+}
 #con4 .play a {
   width: 700px;
+  height: 400px;
   display: block;
-  margin: 0px auto;
-} /*아니 손가락이 왜 안뜨지????*/
+}
 #con4 .play video {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#con4 .play {
+  width: 100%;
+  position: relative;
+}
+#con4 .play li:nth-child(2) {
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+  display: none;
+}
+/**/
+/*컨테이너_4st_좌우 화살표*/
+.arr {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* position: relative; */
+  margin-top: 20px;
+}
+.arr li {
+  /* position: absolute; */
+  /* bottom: -100px;
+  transform: translateY(-50%); */
+  font-size: 35px;
+}
+/*좌우 화살표_중간 슬라이드 바*/
+.arr .bar {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+.arr .bar .back {
+  width: 300px;
+  height: 5px;
+  background-color: #eee;
+  margin: 0px 15px;
+}
+.arr .bar span {
+  width: calc(100% / 2 * 1);
+  height: 100%;
+  background-color: blue;
+  display: block;
 }
 
 /*navi*/
 #navi {
   position: fixed;
-  right: 50px;
+  right: 60px;
   top: 50%;
   z-index: 10; /*z-인덱스로 위로 올리지 않으면 클릭이 되지 않음*/
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   gap: 10px;
+  font-family: "DaimlerCAC-Regular";
 }
 #navi li {
   width: 5px;
   height: 20px;
   background-color: white;
+  align-content: center;
 }
 #navi span {
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
   margin-left: 15px;
   display: none;
 }

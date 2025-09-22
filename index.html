@@ -6,6 +6,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.transform2d.js"></script>
     <script src="js/custom.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap"
@@ -15,14 +17,21 @@
       href="https://db.onlinewebfonts.com/c/06ca1e9118dc79821092f734573d232e?family=DaimlerCAC-Regular"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <header>
       <ul>
         <li><a href="#">MAIN</a></li>
-        <li><a href="#">PAGE2</a></li>
-        <li><a href="#">PAGE3</a></li>
-        <li><a href="#">PAGE4</a></li>
+        <li><a href="#">MODEL</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">BRAND</a></li>
       </ul>
     </header>
     <div id="container">
@@ -35,20 +44,27 @@
         <div class="right"></div>
       </section>
       <section id="con2">
+        <h3>MINI COOPER MODELS</h3>
         <ul>
-          <li><img src="img/MINI-F66-Overview-Design.avif" alt="" /></li>
           <li>
-            <h4>MINI COOPER 2 DOOR</h4>
+            <a href="#"
+              ><img src="img/MINI-F66-Overview-Design.avif" alt=""
+            /></a>
+          </li>
+          <li>
+            <h4>MINI COOPER <br />2 DOOR</h4>
             <p>
               There are no wrong turns when choosing between the MINI Cooper 2
               Door, MINI Cooper S 2 Door, and high-performance MINI JCW 2 Door.
             </p>
           </li>
           <li>
-            <img src="img/F65-desktop.jpg.miniusaimg.cover.avif" alt="" />
+            <a href="#">
+              <img src="img/F65-desktop.jpg.miniusaimg.cover.avif" alt=""
+            /></a>
           </li>
           <li>
-            <h4>MINI COOPER 4 DOOR</h4>
+            <h4>MINI COOPER <br />4 DOOR</h4>
             <p>
               Get set up with some of the most beloved MINI Cooper 4 Doors on
               the market.
@@ -57,7 +73,7 @@
         </ul>
       </section>
       <section id="con3">
-        <div class="txt"></div>
+        <h3>ABOUT COOPER</h3>
         <ul>
           <li>
             <a href="#">
@@ -65,8 +81,9 @@
               <div>
                 <h4>Heritage</h4>
                 <p>
-                  We've been creating cars with the mission of evoking joy and
-                  inspiring Big Love for over 60 years.
+                  We’ve been creating cars with the mission of evoking joy and
+                  inspiring Big Love for over 60 years. Decades later, that
+                  passion has only grown to new heights.
                 </p>
               </div></a
             >
@@ -78,7 +95,8 @@
                 <h4>Driving School</h4>
                 <p>
                   Over 50 years of motorsport legacy live in each John Cooper
-                  Works MINI.
+                  Works MINI, something you can experience for yourself with a
+                  MINI JCW Driving Experience.
                 </p>
               </div></a
             >
@@ -100,25 +118,58 @@
       </section>
       <section id="con4">
         <div>
-          <h3>브랜드 스토리</h3>
-          <div class="play">
-            <a href="#">
-              <video
-                src="img/204565-924698132_small.mp4"
-                autoplay
-                muted
-                controls
-              ></video>
-            </a>
+          <h3>BRAND STORY</h3>
+          <div>
+            <ul class="play">
+              <li>
+                <a href="#">
+                  <video
+                    src="img/MINI_JCW.mp4"
+                    autoplay
+                    muted
+                    controls
+                    loop="true"
+                  ></video>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <video
+                    src="img/204565-924698132_small.mp4"
+                    autoplay
+                    muted
+                    controls
+                    loop="true"
+                  ></video>
+                </a>
+              </li>
+            </ul>
+            <ul class="arr">
+              <li class="prev">
+                <a href="#"><i class="fa-solid fa-circle-chevron-left"></i></a>
+              </li>
+              <li class="bar">
+                <div class="left"></div>
+                <div class="back">
+                  <span></span>
+                </div>
+                <div class="right"></div>
+              </li>
+              <li class="next">
+                <a href="#" _self
+                  ><i class="fa-solid fa-circle-chevron-right"></i
+                ></a>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
     </div>
     <ul id="navi">
-      <li class="on"><span>page1</span></li>
-      <li><span>page2</span></li>
-      <li><span>page3</span></li>
-      <li><span>page4</span></li>
+      <li class="on"><span>MAIN</span></li>
+      <li><span>MODEL</span></li>
+      <li><span>ABOUT</span></li>
+      <li><span>BRAND</span></li>
     </ul>
   </body>
 </html>
