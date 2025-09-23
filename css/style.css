@@ -13,19 +13,14 @@ ul {
 /*헤더*/
 header {
   width: 100%;
-  /* box-sizing: border-box; */
   position: absolute;
-  /* bottom: 0px; */
+  top: 100%;
   left: 0px;
   z-index: 10;
 }
 header ul {
-  width: 100%; /*ab을 주면 딱 텍스트 내용 만큼만 너비를 가져가기 때문에 width값을 지정해줘야 함*/
+  width: 100%;
   display: flex;
-  /* position: absolute;
-  bottom: 0px;
-  left: 0px; */
-  /* -> 왜 header로 옮겼지?? */
 }
 header li {
   width: calc(100% / 4);
@@ -45,9 +40,7 @@ header.on {
   position: fixed;
   top: 0px;
   left: 0px;
-  /* box-shadow: 2px 2px 3px #222;  */
-  /*??? 왜 적용이 안되지?? 뭔가 이상하게 되는 것 같은데?? */
-} /*클래스 이름을 중복으로 줘도 상관없나? 같은 클래스 이름에 내용물은 다른거잖아*/
+}
 
 /*컨테이너*/
 #container section {
@@ -56,12 +49,11 @@ header.on {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed; /*다음 이미지가 그 위로 올라옴???*/
+  background-attachment: fixed;
 }
 #container section > h3 {
   height: 150px;
   font-size: 45px;
-  /* margin-bottom: 50px; */
   color: white;
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
   text-align: center;
@@ -73,7 +65,7 @@ header.on {
 section#con1 {
   background-image: url(../img/Homepage_NewVisitor_Desktop_NoFrame.jpg.miniusaimg.cover.avif);
   position: relative;
-} /* 선택자 이름 넣을 때 주의할 것!! section과 #con1 사이에 띄어쓰기가 들어가면 안됨 */
+}
 /*컨테이너_1st_선 움직임*/
 #con1 .down {
   width: 10px;
@@ -133,18 +125,18 @@ section#con2 {
 }
 #con2 ul {
   width: 80%;
-  /* height: 100%; */
   display: flex;
-  align-items: center; /*왜 ul이 가운데로 가지...? 이게 왜 되지....???*/
+  align-items: center;
   gap: 30px;
   margin: 0px auto;
 }
 #con2 li {
   width: calc(100% / 4);
   height: 400px;
+  overflow: hidden;
   transform: translateY(100px);
   opacity: 0;
-  transition: 1.5s; /*addClass를 사용하면 애니메이트 효과 줄 수 없으니까 미리 트랜지션 넣어놓기*/
+  transition: 1.5s;
 }
 #con2 li:nth-child(even) {
   margin-right: 30px;
@@ -170,7 +162,7 @@ section#con2 {
 }
 /*컨테이너_2st_li 등장 속도*/
 #con2 li:nth-child(1) {
-  transition-delay: 0s; /*트랜지션에도 딜레이가 있음 -> 시작시간을 지연시킴*/
+  transition-delay: 0s;
 }
 #con2 li:nth-child(2) {
   transition-delay: 0.2s;
@@ -181,7 +173,7 @@ section#con2 {
 #con2 li:nth-child(4) {
   transition-delay: 1s;
   align-content: end;
-} /* >> 이렇게 하면 li들이 한꺼번에 등장하는게 아니라 순차적으로 등장하는 효과를 줄 수 있음 */
+}
 
 /*컨테이너_3st*/
 section#con3 {
@@ -191,14 +183,12 @@ section#con3 {
 }
 #con3 {
   perspective: 800px;
-  /*원근감을 줌 -> 부모한테 써줘야 자식한테 원근감이 적용됨
-  값이 크면 원근감이 작음, 값이 작으면 원근감이 크게 느껴짐*/
 }
 #con3 h3 {
   opacity: 0;
   transform: translateY(-200px);
 }
-/**/
+/*컨테이너_3st_ul*/
 #con3 ul {
   width: 1200px;
   height: 450px;
@@ -206,8 +196,6 @@ section#con3 {
   justify-content: center;
   align-items: center;
   gap: 50px;
-  /* position: relative; */
-  perspective: 650px;
   margin: 0px auto;
   transform: rotateY(0deg);
   opacity: 0;
@@ -239,7 +227,7 @@ section#con3 {
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
-  /* padding: 20px; */
+  word-break: keep-all;
 }
 #con3 li h4 {
   font-size: 40px;
@@ -250,8 +238,6 @@ section#con3 {
   line-height: 30px;
 }
 
-/**/
-
 /*컨테이너_4st*/
 section#con4 {
   background-image: url(../img/pic44.jpg);
@@ -260,10 +246,8 @@ section#con4 {
 }
 #con4 > div {
   width: 1200px;
-  /* height: 65vh; */
   margin: 0px auto;
   align-content: center;
-  /* background-color: white; */
   text-align: center;
 }
 #con4 h3 {
@@ -273,13 +257,15 @@ section#con4 {
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
   letter-spacing: 5px;
 }
-/* #con4 .play {
-  text-align: center;
-} -> 왜 안되지....*/
 #con4 > div > div {
   width: 700px;
-  height: 400px;
+  height: 500px;
   margin: 0px auto;
+  overflow: hidden;
+}
+#con4 .play {
+  display: flex;
+  width: 100%;
 }
 #con4 .play a {
   width: 700px;
@@ -291,33 +277,18 @@ section#con4 {
   height: 100%;
   object-fit: cover;
 }
-#con4 .play {
-  width: 100%;
-  position: relative;
-}
-#con4 .play li:nth-child(2) {
-  /* position: absolute;
-  top: 0;
-  left: 0; */
-  display: none;
-}
-/**/
 /*컨테이너_4st_좌우 화살표*/
 .arr {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* position: relative; */
   margin-top: 20px;
 }
 .arr li {
-  /* position: absolute; */
-  /* bottom: -100px;
-  transform: translateY(-50%); */
   font-size: 35px;
 }
-/*좌우 화살표_중간 슬라이드 바*/
+/*컨테이너_4st_좌우 화살표_중간 슬라이드 바*/
 .arr .bar {
   display: flex;
   align-items: center;
@@ -341,7 +312,7 @@ section#con4 {
   position: fixed;
   right: 60px;
   top: 50%;
-  z-index: 10; /*z-인덱스로 위로 올리지 않으면 클릭이 되지 않음*/
+  z-index: 10;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
