@@ -301,7 +301,7 @@ section#con4 {
   margin: 0px 15px;
 }
 .arr .bar span {
-  width: calc(100% / 2 * 1);
+  width: calc(100% / 3 * 1);
   height: 100%;
   background-color: blue;
   display: block;
